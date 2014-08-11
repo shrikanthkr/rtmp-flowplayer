@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="flowplayer-3.2.13.min.js"></script>
+</head>
+<body>
+<div>
+<a style="display: block;height:400px;width:600px;background-color: #ffffff;border: solid 1px #ccc;" id="rtmp_player"></a>
+ 
+<!-- Note: the property of the above tag (rtmp_player) must match the first parameter of the script below -->
+ 
+<script>
+                $f("rtmp_player", "flowplayer.rtmp-3.2.13.swf", {
+                    clip: {
+                       url : 'stream1', //this is the name of the stream assset in the encoder
+                       live : true,  // tell flowplayer it's live
+                       provider: 'rtmp'
+                 },
+ 
+                plugins: {
+                  rtmp: {
+                  url: 'flowplayer.rtmp-3.2.13.swf',
+                  netConnectionUrl: 'rtmp://95.138.174.175:1935/chat/parthi' ,  //this is the rest of the URL excluding the stream name that you set in the encoder
+                  subscribe:true  //subscribe to the stream
+                      }
+                 }
+              });
+</script>
+</div>
+</body>
+</html>
